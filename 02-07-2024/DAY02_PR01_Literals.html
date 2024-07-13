@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Literals</title>
+</head>
+<body>
+  <p id="msg"></p>
+  <p id="msgone"></p>
+
+  <script>
+    let a = 10;
+    let b = 20;
+
+    let path = "a.jpg";
+    let hgt = "auto";
+    let wdt = "20%";
+    let border = 1;
+
+    htmllines = `<img src=${path} height=${hgt} width=${wdt} border=${border} />`;
+    document.getElementById("msg").innerHTML = htmllines;
+
+    myObj = {a:"hello",b:"world"};
+    newline =  `${myObj["a"]} ${myObj["b"]}`;
+    newline += "<br/>Thank You";
+    document.getElementById("msgone").innerHTML = newline;
+
+  </script>
+</body>
+</html>

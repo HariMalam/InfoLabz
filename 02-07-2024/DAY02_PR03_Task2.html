@@ -1,0 +1,43 @@
+<!-- TASK 2 : https://data.covid19india.org/data.json
+
+Allow user to insert date in form field. On click of submit print New cases / New deaths in table format as shown in below image . -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="date">Date : </label>
+      <input type="text" name="date" id="date" />
+      <input type="submit" onclick="show(this.form); return false;" />
+    </form>
+
+    <p id="data"></p>
+
+    <script>
+      const show = async (form) => {
+        const url = "https://data.covid19india.org/data.json";
+        const data = await (await fetch(url)).json();
+        const date = form.date.value;
+
+        let html = `<table border='1' style="width: 300px;">`;
+
+        for (let i = 0; i < data["cases_time_series"].length; i++) {
+          if (date === data["cases_time_series"][i]["date"]) {
+            html += `<tr><th>New Cases</th><td>${data["cases_time_series"][i]["dailyconfirmed"]}</td></tr>`;
+            html += `<tr><th>New Deaths</th><td>${data["cases_time_series"][i]["dailydeceased"]}</td></tr>`;
+            break;
+          }
+        }
+
+        html += `</table>`
+
+        document.getElementById("data").innerHTML = html;
+      };
+    </script>
+  </body>
+</html>

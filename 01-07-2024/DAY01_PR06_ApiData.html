@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetching Live Data</title>
+</head>
+<body>
+  <script>
+    const load = async () => {
+      let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+      let myObj = await (await fetch(url)).json();
+
+      for(i in myObj){
+        document.write(i + "<br/>");
+      }
+
+      document.write(myObj["bpi"]["USD"]["rate"])
+    }
+    load();
+  </script>
+</body>
+</html>

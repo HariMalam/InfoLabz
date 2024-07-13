@@ -1,0 +1,51 @@
+<!--
+
+TASK 3 : 
+
+API : https://data.covid19india.org/data.json
+
+PRINT DATA FROM ABOVE API IN TABLE FORMAT 
+
+SR NO  | STATE NAME | CONFIRMED CASES | RECOVERED CASES | DEATH CASES
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3 ( Fetching Live Data )</title>
+  </head>
+  <body>
+    <script>
+      const load = async () => {
+        const url = "https://data.covid19india.org/data.json";
+        const myObj = await (await fetch(url)).json();
+
+        document.write(
+          `<table border="1" width="100%">
+            <tr>
+              <th>SR NO</th>
+              <th>STATE NAME</th>
+              <th>CONFIRMED CASES</th>
+              <th>RECOVERED CASES</th>
+              <th>DEATH CASES</th>
+            </tr>`
+        );
+
+        for (i in myObj["statewise"]) {
+          document.write("<tr>");
+          document.write("<td>" + i + "</td>");
+          document.write("<td>" + myObj["statewise"][i]["state"] + "</td>");
+          document.write("<td>" + myObj["statewise"][i]["confirmed"] + "</td>");
+          document.write("<td>" + myObj["statewise"][i]["recovered"] + "</td>");
+          document.write("<td>" + myObj["statewise"][i]["deaths"] + "</td>");
+          document.write("</tr>");
+        }
+        document.write(`</table>`);
+      };
+      load();
+    </script>
+  </body>
+</html>

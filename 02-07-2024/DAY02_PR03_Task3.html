@@ -1,0 +1,51 @@
+<!-- Task 3 : Allow user to insert Mutual fund scheme code. If found print scheme name otherwise print scheme not found. 
+
+API: https://api.mfapi.in/mf -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <form>
+      <label for="code">Mutual fund scheme code : </label>
+      <input type="text" name="code" id="code" />
+      <input type="submit" onclick="show(this.form); return false;" />
+    </form>
+
+    <p id="data"></p>
+
+    <script>
+      const show = async (form) => {
+        const url = "https://api.mfapi.in/mf";
+        const data = await (await fetch(url)).json();
+        const code = form.code.value;
+
+        let innerTable = "";
+        let flag = false;
+        for (let i = 0; i < data.length; i++) {
+          if (code == data[i]["schemeCode"]) {
+            innerTable += `<tr><th>Scheme Code</th><td>${data[i]["schemeCode"]}</td></tr>`;
+            innerTable += `<tr><th>Scheme Name</th><td>${data[i]["schemeName"]}</td></tr>`;
+            flag = true;
+            break;
+          }
+        }
+
+        let html = "";
+        if (flag) {
+          html += `<table border='1' style="width: 400px;">`;
+          html += innerTable;
+          html += `</table>`;
+        } else {
+          html = "scheme not found";
+        }
+
+        document.getElementById("data").innerHTML = html;
+      };
+    </script>
+  </body>
+</html>

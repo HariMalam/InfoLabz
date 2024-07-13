@@ -1,0 +1,59 @@
+<!-- 
+ TASK 1 : API ACCESS ( PRINT DATA )
+
+API : http://universities.hipolabs.com/search?country=india
+
+Print universities from above API in below table format. ( You can added css/bootstrap as per your requirement ) 
+
+SR NO | UNIVERSITY NAME | STATE-PROVINCE  | WEBSITE LINK 
+1          Ashoka University           Haryana                         Visit Site
+
+( on click of visit site, website should be open in new tab ) 
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1 (API ACCESS)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="data"></div>
+    <script>
+      const load = async () => {
+        const url = `http://universities.hipolabs.com/search?country=india`;
+        const data = await (await fetch(url)).json();
+
+        let htmlCode = `<table class="table">`;
+        htmlCode += `<thead class="thead-dark"><tr><th scope="col">SR NO</th><th>UNIVERSITY NAME</th scope="col"><th scope="col">STATE-PROVINCE</th><th scope="col">WEBSITE LINK</th></tr></thead><tbody>`;
+
+        for (let i = 0; i < data.length; i++) {
+          htmlCode += `
+          <tr>
+            <th scope="row">${i + 1}</th>
+            <td>${data[i]["name"]}</td>
+            <td>${data[i]["state-province"]}</td>
+            <td>
+              <a href="${data[i]["web_pages"][0]}" target="_blank" > ${
+            data[i]["web_pages"][0]
+          } </a>
+            </td>
+          </tr>`;
+        }
+
+        htmlCode += `</tbody></table>`;
+
+        document.getElementById("data").innerHTML = htmlCode;
+      };
+      load();
+    </script>
+  </body>
+</html>

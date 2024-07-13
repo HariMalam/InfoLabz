@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS FORM TO VARIABLE</title>
+  </head>
+  <body>
+    <form style="text-align: left;">
+      <table>
+        <tr>
+          <th>Name :</th>
+          <td>
+            <input type="text" placeholder="Enter Name" name="uname" /> <br />
+          </td>
+        </tr>
+        <tr>
+          <th>Surname :</th>
+          <td>
+            <input type="text" placeholder="Enter Surname" name="usurname" />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <input type="submit" onclick="check(this.form); return false;" />
+          </th>
+        </tr>
+      </table>
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+      const check = (form) => {
+        const name = form.uname.value;
+        const surname = form.usurname.value;
+        const msgHtml = `<table border='1' style="width: 300px;">
+        <tr>
+          <th>
+            Field
+          </th>
+          <th>
+            Data
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Name
+          </td>
+          <td>
+            ${name}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Surname
+          </td>
+          <td>
+            ${surname}
+          </td>
+        </tr>
+      </table>`;
+        document.getElementById("msg").innerHTML = msgHtml;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!-- 
+ TASK 2 : API SEARCH OPERATION 
+
+API : https://isro.vercel.app/api/spacecrafts
+
+Allow user to insert name of spacecraft in textbox. Print Spacecraft found or no 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name of SpaceCraft</label>
+      <input type="text" id="name" name="name" />
+      <input type="submit" onclick="check(this.form); return false;" />
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+      const check = async (form) => {
+        const name = form.name.value;
+        const url = "https://isro.vercel.app/api/spacecrafts";
+        const msg = document.getElementById("msg");
+        const data = await (await fetch(url)).json();
+        let flag = false;
+        let id = "";
+        for (let i = 0; i < data["spacecrafts"].length; i++) {
+          if (data["spacecrafts"][i].name === name) {
+            id = data["spacecrafts"][i].id;
+            flag = true;
+            break;
+          }
+        }
+        if (flag) {
+          msg.innerHTML = `Spacecraft found <br/>`;
+          msg.innerHTML += `<table border='1' style="text-align: left; width:200px;"><tr><th>id</th><td>${id}</td></tr><tr><th>Name</th><td>${name}</td></tr>`;
+        } else {
+          msg.innerHTML = `Spacecraft not found`;
+        }
+      };
+    </script>
+  </body>
+</html>

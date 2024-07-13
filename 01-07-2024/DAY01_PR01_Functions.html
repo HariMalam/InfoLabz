@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions in JavaScript ( Basic )</title>
+  </head>
+  <body>
+    <script>
+      function msg() {
+        document.write("welcome to home page <br>");
+      }
+      msg();
+
+      function add(a, b) {
+        document.write(a + b);
+      }
+      add(10, 20);
+
+      function sub() {
+        let a = 20,
+          b = 10;
+        return a - b;
+      }
+      let a = sub();
+      document.write("<br>" + a);
+
+      function pow(x, y) {
+        return x ** y;
+      }
+      let b = pow(5, 2);
+      document.write("<br>" + b);
+    </script>
+  </body>
+</html>

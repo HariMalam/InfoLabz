@@ -1,0 +1,86 @@
+<!-- TASK 1 : Create a simple html form ( registration form ) with name, email, phone ,gender ( radio ) , city ( drop-down) and address (textarea). On submit button print all data in table format. [form data to table] -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <form>
+      <table style="text-align: left; font-size: large">
+        <tr>
+          <th>
+            <label for="name">Name</label>
+          </th>
+          <td>
+            <input type="text" name="name" id="name" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="email">Email</label>
+          </th>
+          <td>
+            <input type="email" name="email" id="email" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>Gender</label>
+          </th>
+          <td>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="city">City</label>
+          </th>
+          <td>
+            <select name="city" id="city">
+              <option value="" name="">Select</option>
+              <option value="junagadh" name="junagadh">Junagadh</option>
+              <option value="surat" name="surat">Surat</option>
+              <option value="modasa" name="modasa">Modasa</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="address">Address</label>
+          </th>
+          <td>
+            <textarea name="address" id="address"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <input
+              type="submit"
+              value="Submit"
+              onclick="show(this.form); return false;"
+            />
+          </th>
+        </tr>
+      </table>
+    </form>
+
+    <p id="data"></p>
+
+    <script>
+      const show = (form) => {
+        let html = `<h1>Submitted Data</h1>`;
+        html += `<table border='1'>`;
+        html += `<tr><th>Name</th><th>Email</th><th>Gender</th><th>CIty</th><th>Address</th></tr>`;
+        html += `<tr><td>${form.name.value}</td><td>${form.email.value}</td><td>${form.gender.value}</td><td>${form.city.value}</td><td>${form.address.value}</td></tr>`;
+        document.getElementById("data").innerHTML = html;
+        form.reset();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Data Fetching</title>
+  </head>
+  <body>
+    <script>
+      const load = async () => {
+        let url = "https://data.covid19india.org/data.json";
+        let coviddata = await (await fetch(url)).json();
+        document.write("<table border='1'>");
+        let count = 0;
+        for (let i = 0; i < coviddata["cases_time_series"].length; i++) {
+          if (coviddata["cases_time_series"][i]["dailyconfirmed"] >= 100000) {
+            document.write(
+              "<tr style='color:red'><td>" +
+                (i + 1) +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["date"] +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["dailyconfirmed"] +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["dailyrecovered"] +
+                "</td></tr>"
+            );
+            count++;
+          } else {
+            document.write(
+              "<tr><td>" +
+                (i + 1) +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["date"] +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["dailyconfirmed"] +
+                "</td><td>" +
+                coviddata["cases_time_series"][i]["dailyrecovered"] +
+                "</td></tr>"
+            );
+          }
+        }
+        document.write("</table>");
+        document.write("total days with more than 1 lac cases ", count);
+      };
+      load();
+    </script>
+  </body>
+</html>
