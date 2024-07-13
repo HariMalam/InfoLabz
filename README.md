@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Dynamic Web Page Designing Using React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Internship at INFOLABZ IT SERVICES PVT. LTD.
 
-## Available Scripts
+**Internship Duration:** 29 June 2024 - 12 July 2024
 
-In the project directory, you can run:
+## Abstract
+This internship focuses on dynamic webpage designing using React, a popular JavaScript web framework that is a crucial part of full-stack web development. During the internship, we will work on creating real-time dynamic web pages using live APIs. To fetch live data, we will leverage concepts of HTTP (request-response mechanism) and ES6.
 
-### `npm start`
+## Project Title
+**Real-Time API Handling with React**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Keywords
+- Web Development
+- React
+- Dynamic Web Page Designing
+- API
+- JavaScript Framework
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instructor Profile
+**Mr. Chintan Nagrecha**  
+Director, INFOLABZ IT SERVICES PVT. LTD.  
+Phone: 8866662662  
+Email: [info@infolabz.in](mailto:info@infolabz.in)  
+[www.infolabz.in](http://www.infolabz.in)
 
-### `npm test`
+## HR Details
+**Ms. Zarna Shah**  
+HR, INFOLABZ IT SERVICES PVT. LTD.  
+Phone: 8141236662  
+Email: [hr@infolabz.in](mailto:hr@infolabz.in)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Address:  
+405, Vraj Avenue, Above Sam's Pizza,  
+Near Commerce Six Road, Navrangpura,  
+Ahmedabad, 380009
 
-### `npm run build`
+## Repository Contents
+This repository contains the code and tasks completed during the 15-day internship on dynamic web page designing using React. Each day's tasks are organized into separate folders.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the desired day's folder to explore the code and tasks completed.  
+Follow the instructions in each folder's README (if available) to understand and run the code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Declarations
+### Confirmation Letter
+Confirmation of participation in the internship program at INFOLABZ IT SERVICES PVT. LTD. from 29 June 2024 to 12 July 2024.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Completion Certificate
+Certificate of successful completion of the internship on dynamic web page designing using React.
 
-### `npm run eject`
+## Company Profile
+INFOLABZ IT SERVICES PVT. LTD. is a leading IT services company located in Ahmedabad, specializing in web development, software solutions, and IT consultancy. Our mission is to provide high-quality, innovative solutions to meet the dynamic needs of businesses and individuals.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
+For any queries or further information, please contact:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Mr. Chintan Nagrecha**  
+Phone: 8866662662  
+Email: [info@infolabz.in](mailto:info@infolabz.in)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Ms. Zarna Shah**  
+Phone: 8141236662  
+Email: [hr@infolabz.in](mailto:hr@infolabz.in)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2024 INFOLABZ IT SERVICES PVT. LTD. All rights reserved.
